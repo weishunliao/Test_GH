@@ -1,11 +1,21 @@
-name: Open new PR
-on: workflow_dispatch
+name: Automatically create pull request
+
+on:
+  push:
+    branches-ignore:
+      - "main"
+  workflow_dispatch:
 
 jobs:
-  open-issue:
+  create_pr_repo_sync:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          gh pr create --repo ${{ github.repository }} -B main -H db-failed-over --title "db failover" --body "Detailed description of the changes"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+      - name: Create pull request
+        id: open-pr
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "main"
+          pr_title: "db failover"
+          pr_template: "pull_request_template.md"
+          pr_reviewer: "prov"
