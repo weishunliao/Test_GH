@@ -9,7 +9,9 @@ jobs:
   open-pr:
     runs-on: ubuntu-latest
     permissions:
+      contents: write
       pull-requests: write
+      repository-projects: write
     steps:
       - run: |
           gh pr create --repo ${{ github.repository }} -B main -t 'db failover' -b 'body'
