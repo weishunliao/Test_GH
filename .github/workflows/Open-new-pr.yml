@@ -13,6 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          gh pr create -B main -t 'db failover' -F "pull_request_template.md"
+          gh pr create -B main -t 'db failover' -r weishunliao -F "pull_request_template.md"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
