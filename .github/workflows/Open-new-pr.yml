@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
+      repository-projects: read
     steps:
       - uses: actions/checkout@v3
       - run: |
