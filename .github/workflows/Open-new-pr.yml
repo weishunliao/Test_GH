@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          gh pr create --repo ${{ github.repository }} -B main -H db-failed-over -f --template temp.md -t 'failover'
+          gh pr create --repo ${{ github.repository }} -B main -H db-failed-over --title "db failover" --body "Detailed description of the changes"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
