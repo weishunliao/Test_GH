@@ -14,7 +14,6 @@ jobs:
       repository-projects: write
     steps:
       - run: |
-          gh pr create --repo ${{ github.repository }} -B main -t 'db failover' -b 'body'
+          gh pr create --repo ${{ github.repository }} -B main -H -t 'db failover' -b 'body'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: ${{ github.head_ref }}
