@@ -1,4 +1,4 @@
-name: Open new issue
+name: Open new PR
 on: workflow_dispatch
 
 jobs:
@@ -6,10 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      issues: write
+      pull-requests: write
     steps:
       - run: |
-          gh pr create --repo ${{ github.repository }} \
-            create --title "PR title" --body "PR body"
+          gh pr create -B main -H db-failed-over --title 'Merge branch_to_merge into base_branch' --body 'Created by Github action'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
