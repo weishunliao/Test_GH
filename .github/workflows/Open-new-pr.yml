@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          gh pr create --repo ${{ github.repository }} -B main -H db-failed-over -F "pull_request_template.md" -t 'failover'
+          gh pr create --repo ${{ github.repository }} -B main -H db-failed-over -F "../../pull_request_template.md" -t 'failover'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
