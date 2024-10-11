@@ -9,6 +9,6 @@ jobs:
       pull-requests: write
     steps:
       - run: |
-          gh pr create --repo ${{ github.repository }} -B main -H db-failed-over --template "pull_request_template.md" --title 'Merge branch_to_merge into base_branch'
+          gh pr create --repo ${{ github.repository }} -B main -H db-failed-over --template "pull_request_template.md" --title 'Merge branch_to_merge into base_branch' -b 'From GA'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
