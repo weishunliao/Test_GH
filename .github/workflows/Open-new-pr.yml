@@ -2,20 +2,18 @@ name: Automatically create pull request
 
 on:
   push:
-    branches-ignore:
-      - "main"
-  workflow_dispatch:
+    branches:
+      - db-failover
+
+permissions:
+  pull-requests: write
 
 jobs:
-  create_pr_repo_sync:
+  pull-request:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Create pull request
-        id: open-pr
-        uses: repo-sync/pull-request@v2
-        with:
-          destination_branch: "main"
-          pr_title: "db failover"
-          pr_template: "pull_request_template.md"
-          pr_reviewer: "prov"
+      - name: pull-request
+        run: |
+          gh_pr_up() { gh pr create $* || gh pr edit $* }
+          gh_pr_up --title "My pull request" --body "Description"
