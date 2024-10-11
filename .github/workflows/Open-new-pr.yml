@@ -4,9 +4,6 @@ on: workflow_dispatch
 jobs:
   open-issue:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
     steps:
       - run: |
           gh pr create --repo ${{ github.repository }} -B main -H db-failed-over --template "pull_request_template.md" --title 'Merge branch_to_merge into base_branch' -b 'From GA'
