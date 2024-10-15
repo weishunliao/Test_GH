@@ -12,7 +12,7 @@ jobs:
       # actions: read|write|none
       # attestations: read|write|none
       # checks: read|write|none
-      # contents: write
+      contents: write
       # deployments: read|write|none
       # id-token: write|none
       # issues: read|write|none
