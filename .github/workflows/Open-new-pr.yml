@@ -9,9 +9,9 @@ jobs:
   open-pr:
     runs-on: ubuntu-latest
     permissions:
-      actions: write
+      # actions: write
       # attestations: read|write|none
-      # checks: read|write|none
+      checks: write
       contents: read
       # deployments: read|write|none
       # id-token: write|none
