@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: |
           gh pr view ${{ env.BRANCH }} && gh pr reopen ${{ env.BRANCH }} || gh pr create -B main -H ${{ env.BRANCH }} -t 'Database failover' -r weishunliao -F pull_request_template.md
         env:
