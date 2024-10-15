@@ -3,7 +3,7 @@ name: Automatically create pull request
 on:
   push:
     branches:
-      - db-failover
+      - db-failover*
 
 jobs:
   open-pr:
