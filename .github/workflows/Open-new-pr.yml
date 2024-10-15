@@ -13,9 +13,9 @@ jobs:
       # attestations: write
       # checks: write
       contents: read
-      deployments: write
-      # id-token: write|none
-      # issues: read|write|none
+      # deployments: write
+      id-token: write
+      issues: write
       # discussions: read|write|none
       # packages: read|write|none
       # pages: read|write|none
