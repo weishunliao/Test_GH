@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       # actions: write
-      # attestations: read|write|none
-      checks: write
+      attestations: write
+      # checks: write
       contents: read
       # deployments: read|write|none
       # id-token: write|none
