@@ -14,6 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          gh pr reopen || gh pr create -B main -t 'db failover' -r weishunliao -F "pull_request_template.md"
+          gh pr create -B main -t 'Database failover' -r weishunliao -F pull_request_template.md || gh pr edit -B main --title 'Database failover' -F pull_request_template.md
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
