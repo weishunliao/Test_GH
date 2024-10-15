@@ -8,10 +8,7 @@ on:
 jobs:
   open-pr:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-      contents: read
-      repository-projects: read
+    permissions: write-all
     steps:
       - uses: actions/checkout@v4
       - run: |
