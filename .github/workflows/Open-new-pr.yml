@@ -9,9 +9,9 @@ jobs:
   open-pr:
     runs-on: ubuntu-latest
     permissions:
+      contents: write
       pull-requests: write
       repository-projects: write
-      contents: read
     steps:
       - uses: actions/checkout@v3
       - run: |
