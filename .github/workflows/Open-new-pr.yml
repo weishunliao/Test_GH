@@ -14,6 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          gh pr create -B main --title "Merge ${{ github.ref_name }} into develop" --body 'Created by Github action' || gh pr edit -B main --title "Merge ${{ github.ref_name }} into develop" --body 'Created by Github action'
+          gh pr view ${{ env.BRANCH }} && gh pr reopen ${{ env.BRANCH }} || gh pr create -B main -H ${{ env.BRANCH }} -t 'Database failover' -r weishunliao -F pull_request_template.md
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ github.ref }}
