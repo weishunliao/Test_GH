@@ -14,11 +14,11 @@ jobs:
       # checks: write
       contents: read
       # deployments: write
-      id-token: write
-      issues: write
-      # discussions: read|write|none
-      # packages: read|write|none
-      # pages: read|write|none
+      # id-token: write
+      # issues: write
+      discussions: write
+      packages: write
+      pages: write
       pull-requests: write
       # repository-projects: write
       # security-events: read|write|none
