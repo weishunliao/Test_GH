@@ -1,6 +1,9 @@
 name: Auto commit
 
-on: push
+on:
+  push:
+    branches:
+      - db-failover*
 
 jobs:
   format-code:
