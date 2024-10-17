@@ -6,7 +6,7 @@ on:
       - db-failover*
 
 jobs:
-  format-code:
+  format:
     runs-on: ubuntu-latest
 
     permissions: write-all
@@ -14,7 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Other steps that change files in the repository
+      - name: "Change"
+        run: echo "Changes!" >> README.md
 
       # Commit all changed files back to the repository
       - uses: stefanzweifel/git-auto-commit-action@v5
