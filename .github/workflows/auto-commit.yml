@@ -19,3 +19,9 @@ jobs:
 
       # Commit all changed files back to the repository
       - uses: stefanzweifel/git-auto-commit-action@v5
+
+      - run: |
+          gh pr view ${{ env.BRANCH }} && gh pr reopen ${{ env.BRANCH }} || gh pr create -B main -H ${{ env.BRANCH }} -t 'Database failover' -F pull_request_template.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ github.ref_name }}
