@@ -3,7 +3,8 @@ name: Automatically create pull request
 on:
   push:
     branches:
-      - db-failover*
+        - abc
+      # - db-failover*
 
 jobs:
   open-pr:
@@ -12,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          gh pr view ${{ env.BRANCH }} && gh pr reopen ${{ env.BRANCH }} || gh pr create -B main -H ${{ env.BRANCH }} -t 'Database failover' -r weishunliao -F pull_request_template.md
+          gh pr view ${{ env.BRANCH }} && gh pr reopen ${{ env.BRANCH }} || gh pr create -B main -H ${{ env.BRANCH }} -t 'Database failover' -F pull_request_template.md
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: ${{ github.ref_name }}
