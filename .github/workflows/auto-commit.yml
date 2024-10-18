@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: "Change"
-        run: sed -e "s/us-[a-z0-9:-]+/us-east1:east1-instance1/g" "README.md"
+        run: sed -E "s/us-[a-z0-9:-]+/us-east1:east1-instance1/g" "README.md"
         # run: sed -i -e "s/us-[a-z0-9:-]+/us-east1:east1-instance1/" README.md
 
       # Commit all changed files back to the repository
