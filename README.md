@@ -1,4 +1,4 @@
 # Test
 
 cloudSql:
-  instance: provisioning-service-prod-001:123
+  instance: provisioning-service-prod-001:us-123
