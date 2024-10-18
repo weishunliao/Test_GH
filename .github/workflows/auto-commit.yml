@@ -1,9 +1,15 @@
 name: Auto commit
 
 on:
-  push:
-    branches:
-      - db-failover*
+  workflow_dispatch:
+    inputs:
+      region:
+        description: 'Region of CloudSql'
+        type: string
+        required: true
+  # push:
+  #   branches:
+  #     - db-failover*
 
 jobs:
   format:
@@ -15,7 +21,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: "Change"
-        run: echo "Changes!" >> README.md
+        run: echo ${{ inputs.region }}  >> README.md
 
       # Commit all changed files back to the repository
       - uses: stefanzweifel/git-auto-commit-action@v5
