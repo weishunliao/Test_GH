@@ -7,9 +7,10 @@ on:
         description: 'Region of CloudSql'
         type: string
         required: true
-  # push:
-  #   branches:
-  #     - db-failover*
+      env:
+        description: 'Environment'
+        type: environment
+        required: true
 
 jobs:
   failover:
